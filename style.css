@@ -1,0 +1,28 @@
+.recipe {
+  border-bottom: 2px dashed blue;
+  margin-bottom: 5px;
+}
+
+/*
+#mainDiv {
+  padding-bottom: 10px;
+}
+#header2 h1 {
+  font-size: 26px;
+  padding-bottom: 6px;
+}
+.navbar {
+  justify-content: space-between;
+}
+.products {
+  border-bottom: 4px dotted blue;
+  padding-top: 15px;
+}
+#editBtn,
+#delBtn {
+  float: right;
+}
+.scrollable-element {
+  scrollbar-color: red yellow;
+}
+*/
