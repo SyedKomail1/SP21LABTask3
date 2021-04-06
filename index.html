@@ -1,98 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <title> Komail Web Technologies </title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      </head>
-      <body>
-          
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      <script src="script.js"></script>
-      
-    </body>
-    </html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Komail Web Technologies</title>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
 
-    
-        </head>
-        <body class="container">
-          <h1>Recipies API Client</h1>
-    <button id="addBtn" class="btn btn-info">Add Recipe</button>
-    <div id="product">
-      Loading ...
-      <div id="mainDiv"></div>
-        </body>
-</html>
+      <!-- Bootstrap CSS -->
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+      />
+    </head>
 
+    <body class="container">
+      <h1>Recipies API Client</h1>
 
-<!--  
-Hello, world! I am a comment and I am
-displayed in multiple lines!
-
-/*
-<h2>FAKE API PRODUCTS</h2>
-        <h3 style="float: right"></h3>
-      </nav>
-    </header>
-    <div class="container" id="header2">
-      <h1>Products Will Appear Here in this Container</h1>
+      <!-- Button trigger modal -->
       <button
-        id="toggle_collapse"
-        class="btn btn-primary"
-        data-target="#collapseCreate"
-        data-toggle="collapse"
-        aria-expanded="false"
-        aria-controls="my-collapse"
+        type="button"
+        class="btn btn-primary btn-lg"
+        data-toggle="modal"
+        data-target="#addModal"
       >
-        Add Product
+        Add Recipe
       </button>
-      <div id="collapseCreate" class="collapse w-50">
-        <div class="form-group pt-2">
-          <label for="Createname">Name:</label>
-          <input id="Createname" class="form-control" type="text" />
-        </div>
-        <div class="form-group">
-          <label for="Createprice">Price:</label>
-          <input id="Createprice" class="form-control" type="number" />
-        </div>
-        <div class="form-group">
-          <label for="Createcolor">Color:</label>
-          <input id="Createcolor" class="form-control" type="text" />
-        </div>
-        <div class="form-group">
-          <label for="Createdepartment">Department:</label>
-          <input id="Createdepartment" class="form-control" type="text" />
-        </div>
-        <div class="form-group">
-          <label for="Createdescription">Description:</label>
-          <input id="Createdescription" class="form-control" type="text" />
-        </div>
-        <button class="btn btn-primary" type="button" id="CreateProduct">
-          Create
-        </button>
-        <button class="btn btn-primary" type="button" id="CanselCreate">
-          Cancel
-        </button>
-      </div>
-      <div id="mainDiv"></div>
-    </div>
 
---> 
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="addModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modelTitleId"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add New Product</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="title"
+                  id="title"
+                  aria-describedby="titleHelp"
+                  placeholder="Title of the Recipe"
+                />
+                <small id="titleHelp" class="form-text text-muted"
+                  >Enter Title of the Recipe</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="title">Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="title"
+                  id="price"
+                  aria-describedby="titleHelp"
+                  placeholder="price of the product"
+                />
+                <small id="titleHelp" class="form-text text-muted"
+                  >Enter Title of the Recipe</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="title">Color</label>
+                <input
+                  type="color"
+                  class="form-control"
+                  name="title"
+                  id="color"
+                  aria-describedby="titleHelp"
+                  placeholder="price of the product"
+                />
+                <small id="titleHelp" class="form-text text-muted"
+                  >Enter Title of the Recipe</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="title">department</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="title"
+                  id="department"
+                  aria-describedby="titleHelp"
+                  placeholder="price of the product"
+                />
+                <small id="titleHelp" class="form-text text-muted"
+                  >Enter Title of the Recipe</small
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="body">Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="body"
+                  id="description"
+                  aria-describedby="bodyHelp"
+                  placeholder="Recipe Details"
+                />
+                <small id="bodyHelp" class="form-text text-muted"
+                  >Enter Details</small
+                >
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button id="addBtn" class="btn btn-info">Add Recipe</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="product">Loading ...</div>
+
+      <div
+        class="modal fade"
+        id="updateModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modelTitleId"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Update Record</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" id="updateId" /> <br />
+              <div class="form-group">
+                <label for="updateTitle">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="updateTitle"
+                  id="updateTitle"
+                  aria-describedby="updateHelpId"
+                  placeholder=""
+                />
+                <small id="updateHelpId" class="form-text text-muted"
+                  >Enter Title to Update</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="updateTitle">price</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="updateTitle"
+                  id="updatePrice"
+                  aria-describedby="updateHelpId"
+                  placeholder=""
+                />
+                <small id="updateHelpId" class="form-text text-muted"
+                  >Enter Title to Update</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="updateTitle">color</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="updateTitle"
+                  id="updateColor"
+                  aria-describedby="updateHelpId"
+                  placeholder=""
+                />
+                <small id="updateHelpId" class="form-text text-muted"
+                  >Enter Title to Update</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="updateTitle">Department</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="updateTitle"
+                  id="updateDepartment"
+                  aria-describedby="updateHelpId"
+                  placeholder=""
+                />
+                <small id="updateHelpId" class="form-text text-muted"
+                  >Enter Title to Update</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="updateBody">Description</label>
+                <textarea
+                  class="form-control"
+                  name="updateBody"
+                  id="updateDescription"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button id="updateSave" class="btn btn-primary">Update</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+      ></script>
+      <script src="script.js"></script>
+    </body>
+  </html>
+</html>
